@@ -185,7 +185,7 @@ with st.sidebar:
         )
 
     st.markdown("---")
-    if st.button("🔄 Refresh State", use_container_width=True):
+    if st.button("🔄 Refresh State", width="stretch"):
         st.rerun()
 
 # -------------------------------------------------------------
@@ -246,7 +246,7 @@ with tab_support:
             height=100,
         )
 
-        submit_btn = st.button("🚀 Submit Ticket", type="primary", use_container_width=True)
+        submit_btn = st.button("🚀 Submit Ticket", type="primary", width="stretch")
 
     with col_right:
         st.markdown("##### ⚡ Resolution Output")
@@ -345,8 +345,8 @@ with tab_approvals:
         manager_note = st.text_input("Review Note", value="Approved by operations manager")
 
         btn_yes, btn_no = st.columns(2)
-        approve_hit = btn_yes.button("✅ Approve", type="primary", use_container_width=True)
-        deny_hit = btn_no.button("❌ Reject", use_container_width=True)
+        approve_hit = btn_yes.button("✅ Approve", type="primary", width="stretch")
+        deny_hit = btn_no.button("❌ Reject", width="stretch")
 
         if (approve_hit or deny_hit) and target_id:
             action = True if approve_hit else False
@@ -404,7 +404,7 @@ with tab_audit:
             label_visibility="collapsed",
         )
     with col_s_btn:
-        find_btn = st.button("Search", type="primary", use_container_width=True)
+        find_btn = st.button("Search", type="primary", width="stretch")
 
     if find_btn and lookup_id:
         try:
@@ -412,7 +412,7 @@ with tab_audit:
             if t_res.status_code == 200:
                 t_data = t_res.json()
                 st.success(f"Log found for #{lookup_id}")
-                st.dataframe(t_data.get("trace", []), use_container_width=True)
+                st.dataframe(t_data.get("trace", []), width="stretch")
                 with st.expander("Raw Record"):
                     st.json(t_data)
             else:
