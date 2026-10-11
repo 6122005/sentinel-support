@@ -1,0 +1,22 @@
+[
+  {
+    "id": "kb_001",
+    "title": "App crashes on login",
+    "body": "If the app crashes during login, clear cache, update to latest version, and try again. If issue persists, collect device logs and escalate."
+  },
+  {
+    "id": "kb_002",
+    "title": "Payment sync error",
+    "body": "Payment sync errors usually resolve within 15 minutes. Ask user to pull-to-refresh on the transactions screen. If unresolved after 30 minutes, escalate to engineering."
+  },
+  {
+    "id": "kb_003",
+    "title": "Refund policy",
+    "body": "Refunds under $50 can be issued by the agent. Refunds $50 and above require manager approval before processing."
+  },
+  {
+    "id": "kb_004",
+    "title": "Duplicate charge",
+    "body": "Duplicate charges are reversed automatically within 3 business days. If not reversed, issue refund after verifying the duplicate order ID."
+  }
+]

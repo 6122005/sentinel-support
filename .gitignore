@@ -1,0 +1,37 @@
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables & Secrets
+.env
+*.env
+!*.env.example
+
+# Databases & Persistence
+*.db
+*.sqlite
+*.sqlite3
+sentinel.db
+.chroma_db/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.coverage
+htmlcov/
+
+# Build & Distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
