@@ -6,9 +6,16 @@ Supports both:
 2. Direct In-Process Graph Execution (for seamless Streamlit Cloud deployments)
 """
 
+import sys
+from pathlib import Path
 import uuid
 import streamlit as st
 import httpx
+
+# Ensure 'src' directory is in sys.path for Streamlit Cloud deployment
+_SRC_PATH = Path(__file__).resolve().parents[2]
+if str(_SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(_SRC_PATH))
 
 API_BASE_URL = "http://127.0.0.1:8000"
 

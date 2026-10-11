@@ -37,7 +37,9 @@ def _mock_classify(message: str) -> tuple[str, float, str]:
 
 
 def classify_ticket(state: TicketState) -> dict:
-    use_mock = os.getenv("MOCK_LLM", "false").lower() in ("true", "1")
+    api_key = os.getenv("OPENAI_API_KEY", "").strip()
+    is_dummy_key = not api_key or "your-key" in api_key or "dummy" in api_key
+    use_mock = os.getenv("MOCK_LLM", "false").lower() in ("true", "1") or is_dummy_key
 
     if use_mock:
         category, confidence, reasoning = _mock_classify(state["message"])
